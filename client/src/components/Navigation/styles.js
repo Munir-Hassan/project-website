@@ -10,7 +10,10 @@ export default makeStyles((theme) => ({
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		flexWrap: 'wrap',
-		padding: '10px 20px'
+		padding: '10px 20px',
+		backgroundColor: '#4faf4e',
+		borderRadius: 5
+		// boxShadow: '0 0px 8px 3px rgba(0, 0, 0, 0.2)'
 	},
 	brandContainer: {
 		display: 'flex',
@@ -19,7 +22,8 @@ export default makeStyles((theme) => ({
 	},
 	brandName: {
 		fontSize: '1.8rem',
-		textDecoration: 'none'
+		textDecoration: 'none',
+		color: '#fff'
 	},
 	menuContainer: {
 		display: 'flex',
@@ -31,13 +35,22 @@ export default makeStyles((theme) => ({
 		// border: '1px solid black'
 	},
 	menuItem: {
-		margin: '0 0.3rem 0 0.3rem',
-		textDecoration: 'none'
+		position: 'relative',
+		fontSize: '1.3rem',
+		margin: '0 0.8rem 0 0.8rem',
+		textDecoration: 'none',
+		color: '#fff',
+		'&:hover': {
+			textDecoration: 'underline'
+			// backgroundColor: '#555',
+			// border: '1px solid white'
+			// transition: 'all 0.5s ease-in-out'
+		}
 	},
 	profileContainer: {
 		display: 'flex',
 		flexDirection: 'row',
-		justifyContent: 'flex-end',
+		justifyContent: 'space-around',
 		alignItems: 'center',
 		flex: '0.2'
 		// border: '1px solid black'

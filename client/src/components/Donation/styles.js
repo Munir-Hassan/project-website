@@ -3,37 +3,62 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
 	donateCardContainer: {
 		display: 'flex',
-		flexDirection: 'row',
-		alignItems: 'center',
+		flexDirection: 'column',
 		justifyContent: 'space-between',
 		padding: '1.5rem',
-		marginBottom: '3rem',
-		height: '25rem',
 		width: '100%',
-		border: '1px solid black'
+		borderRadius: 10
+		// backgroundColor: '#addeac'
+		// border: '1px solid black'
 	},
 	imageContainer: {
 		height: '15rem',
 		width: '15rem',
-		objectFit: 'cover',
-		flex: '0.4',
-		border: '1px solid black'
+		objectFit: 'container',
+		'&:hover': {
+			objectFit: 'cover'
+			// transition: '0.s'
+		}
+		// border: '1px solid black'
 	},
 	infoContainer: {
 		display: 'flex',
 		flexDirection: 'column',
-		flex: '0.5',
-		alignItems: 'start',
-		justifyContent: 'center',
-		overflow: 'auto',
-		border: '1px solid black'
+		flex: 2,
+		alignItems: 'flex-start',
+		justifyContent: 'flex-start',
+		paddingLeft: '2rem',
+		paddingRight: '2rem'
+		// overflowY: 'auto'
+		// minWidth: '80%',
+		// maxWidth: '80%',
+		// border: '1px solid black'
 	},
 	buttonContainer: {
+		position: 'relative',
 		display: 'flex',
 		flexDirection: 'column',
-		flex: '0.1',
+		// flex: 1,
 		alignItems: 'center',
 		justifyContent: 'space-between',
-		border: '1px solid black'
+		borderLeft: '2px solid #E0E0E0'
+		// border: '1px solid black'
+	},
+	inputAmount: {
+		// position: 'absolute',
+		// bottom: '50px',
+		// zIndex: '100'
+	},
+	progress: {
+		width: 'inherit',
+		backgroundColor: '#efefef',
+		margin: '0.5rem',
+		borderRadius: '0.5rem'
+	},
+	bar: {
+		width: '20%',
+		height: '0.6rem',
+		backgroundColor: '#4faf4e',
+		borderRadius: 'inherit'
 	}
 }));

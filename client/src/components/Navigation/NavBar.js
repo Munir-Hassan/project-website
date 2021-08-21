@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { AppBar, Typography, Button } from '@material-ui/core';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import useStyles from './styles';
 
 const NavBar = ({ user, setUser }) => {
@@ -10,10 +12,15 @@ const NavBar = ({ user, setUser }) => {
 	const handleLogOut = () => {
 		localStorage.clear();
 		setUser(null);
+		history.push('/');
 	};
 
 	const handleLogIn = () => {
 		history.push('/auth');
+	};
+
+	const handleUser = () => {
+		history.push('/profile');
 	};
 
 	useEffect(
@@ -25,7 +32,7 @@ const NavBar = ({ user, setUser }) => {
 
 	return (
 		<nav>
-			<AppBar className={classes.appBar} position='static' color='transparent'>
+			<AppBar className={classes.appBar} position='sticky' color='secondary'>
 				<div className={classes.brandContainer}>
 					<Typography className={classes.brandName} component={Link} to='/' variant='h2' align='center'>
 						Imam Foundation
@@ -51,11 +58,23 @@ const NavBar = ({ user, setUser }) => {
 				<div className={classes.profileContainer}>
 					{user ? (
 						<React.Fragment>
-							<p>{user.firstname}</p>
-							<Button onClick={handleLogOut}>Sign Out</Button>
+							<Button
+								onClick={handleUser}
+								variant='outlined'
+							>{`${user.firstname} ${user.lastname}`}</Button>
+							<Button variant='outlined' color='secondary' onClick={handleLogOut}>
+								Sign Out
+							</Button>
 						</React.Fragment>
 					) : (
-						<Button onClick={handleLogIn}>Sign In</Button>
+						<Button
+							style={{ color: '#fff' }}
+							startIcon={<AccountCircleIcon />}
+							variant='text'
+							onClick={handleLogIn}
+						>
+							Sign In
+						</Button>
 					)}
 				</div>
 			</AppBar>

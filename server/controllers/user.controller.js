@@ -41,6 +41,7 @@ export const signIn = async (request, response) => {
 		} else if (userExits.password !== password) {
 			response.status(404).send({ message: 'Incorrect Password!' });
 		} else {
+			console.log(userExits);
 			response.status(201).json({ result: userExits });
 		}
 	} catch (error) {

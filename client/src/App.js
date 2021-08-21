@@ -7,6 +7,7 @@ import Cause from './components/Cause/Cause';
 import Donate from './components/Donation/Donate';
 import Fundraise from './components/Fundraise/Fundraise';
 import Auth from './components/Auth/Auth';
+import Profile from './components/UserProfile/Profile';
 
 function App() {
 	const [ user, setUser ] = useState(JSON.parse(localStorage.getItem('userProfile')));
@@ -19,9 +20,10 @@ function App() {
 					<Switch>
 						<Route path='/' exact component={HomePage} />
 						<Route path='/cause' exact component={Cause} />
-						<Route path='/donate' exact render={(props) => <Donate {...props} />} />
-						<Route path='/fundraise' exact render={(props) => <Fundraise {...props} setUser={setUser} />} />
+						<Route path='/donate' exact render={(props) => <Donate {...props} user={user} />} />
+						<Route path='/fundraise' exact render={(props) => <Fundraise {...props} user={user} />} />
 						<Route path='/auth' exact render={(props) => <Auth {...props} setUser={setUser} />} />
+						<Route path='/profile' exact render={(props) => <Profile {...props} setUser={setUser} />} />
 					</Switch>
 				</Container>
 			</Grow>

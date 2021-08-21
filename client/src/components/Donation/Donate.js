@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Container, Grow, CircularProgress } from '@material-ui/core';
 import DonateItem from './DonateItem';
 import api from '../../APIs';
-const Donate = () => {
+const Donate = ({ user }) => {
 	const location = useLocation();
 	const [ fundraiseData, setFundraiseData ] = useState([]);
 	useEffect(
@@ -44,6 +44,7 @@ const Donate = () => {
 								category={fundraise.category}
 								amount={fundraise.amount}
 								imageFile={fundraise.imageFile}
+								user={user}
 								user_id={fundraise.user_id}
 							/>
 						))

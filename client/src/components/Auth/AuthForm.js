@@ -14,7 +14,7 @@ const initialAuthFormState = {
 
 const AuthForm = ({ setUser }) => {
 	const history = useHistory();
-	const classess = useStyles();
+	const classes = useStyles();
 	const [ authForm, setAuthForm ] = useState(initialAuthFormState);
 	const [ isSignUp, setIsSignUp ] = useState(true);
 	const [ showPassword, setShowPassword ] = useState(false);
@@ -52,7 +52,7 @@ const AuthForm = ({ setUser }) => {
 		}
 	};
 	return (
-		<Paper elevation={4} className={classess.paperForm}>
+		<Paper elevation={4} className={classes.paperForm}>
 			<Typography align='center' gutterBottom variant='h4'>
 				{isSignUp ? 'Sign Up' : 'Sign In'}
 			</Typography>
@@ -93,7 +93,7 @@ const AuthForm = ({ setUser }) => {
 					variant='contained'
 					color='primary'
 					size='medium'
-					className={classess.button}
+					className={classes.button}
 				>
 					{isSignUp ? 'Sign Up' : 'Sign In'}
 				</Button>
@@ -103,7 +103,7 @@ const AuthForm = ({ setUser }) => {
 					variant='contained'
 					onClick={switchMode}
 					size='small'
-					className={classess.button}
+					className={classes.button}
 				>
 					{isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}
 				</Button>
