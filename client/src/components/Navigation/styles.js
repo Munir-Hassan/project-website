@@ -17,8 +17,8 @@ export default makeStyles((theme) => ({
 	},
 	brandContainer: {
 		display: 'flex',
-		alignItems: 'center',
-		flex: '0.2'
+		alignItems: 'center'
+		// flex: '0.2'
 	},
 	brandName: {
 		fontSize: '1.8rem',
@@ -30,7 +30,7 @@ export default makeStyles((theme) => ({
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
-		flex: '0.6',
+		flex: '1',
 		flexWrap: 'wrap'
 		// border: '1px solid black'
 	},
@@ -50,9 +50,14 @@ export default makeStyles((theme) => ({
 	profileContainer: {
 		display: 'flex',
 		flexDirection: 'row',
-		justifyContent: 'space-around',
-		alignItems: 'center',
-		flex: '0.2'
+		justifyContent: 'space-between',
+		alignItems: 'center'
+		// flex: '0.2'
 		// border: '1px solid black'
+	},
+	profileAvater: {
+		height: '2.2rem',
+		width: '2.2rem',
+		marginRight: '1rem'
 	}
 }));

@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 
 import fundraiseRoutes from './routes/fundraise.routes.js';
 import userRoutes from './routes/user.routes.js';
+import paymentRoutes from './routes/payment.routes.js';
 
 const app = express();
 
@@ -14,14 +15,16 @@ app.use(express.urlencoded({ limit: '30mb', extended: true }));
 
 app.use('/fundraise', fundraiseRoutes);
 app.use('/user', userRoutes);
+app.use('/payment', paymentRoutes);
 
 const MONGOOSE_URI =
 	'mongodb+srv://imamtrust:imamtrust123@imamtrustcluster.savbm.mongodb.net/imamTrustDB?retryWrites=true&w=majority';
 
 const connectionParamsDB = {
-	useNewUrlParser: true,
+	useFindAndModify: false,
 	useCreateIndex: true,
-	useUnifiedTopology: true
+	useUnifiedTopology: true,
+	useNewUrlParser: true
 };
 
 mongoose

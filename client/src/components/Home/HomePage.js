@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Grow, Typography } from '@material-ui/core';
 import useStyles from './styles';
 import img from '../../images/img_avatar.png';
+// import 'react-step-progress-bar/styles.css';
+// import { ProgressBar } from 'react-step-progress-bar';
 
 const HomePage = () => {
 	const classes = useStyles();
@@ -31,6 +33,10 @@ const HomePage = () => {
 							<div className={classes.imgIcon}>
 								{/* <img src='#' alt='icon' /> */}
 								<p>Hear stories about the people you have helped.</p>
+								{/* <ProgressBar
+									percent={50}
+									filledBackground='linear-gradient(to right, #fefb72, #f0bb31)'
+								/> */}
 							</div>
 						</div>
 

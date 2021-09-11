@@ -5,7 +5,7 @@ import FundraiseForm from './FundraiseForm';
 const Fundraise = ({ user }) => {
 	return (
 		<Grow in>
-			<Container maxWidth='xs'>
+			<Container maxWidth='xm'>
 				<FundraiseForm user={user} />
 			</Container>
 		</Grow>

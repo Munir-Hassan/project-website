@@ -24,7 +24,7 @@ export default makeStyles((theme) => ({
 	infoContainer: {
 		display: 'flex',
 		flexDirection: 'column',
-		flex: 2,
+		flex: 1,
 		alignItems: 'flex-start',
 		justifyContent: 'flex-start',
 		paddingLeft: '2rem',
@@ -41,24 +41,24 @@ export default makeStyles((theme) => ({
 		// flex: 1,
 		alignItems: 'center',
 		justifyContent: 'space-between',
-		borderLeft: '2px solid #E0E0E0'
+		borderLeft: '2px solid #808080'
 		// border: '1px solid black'
 	},
 	inputAmount: {
 		// position: 'absolute',
 		// bottom: '50px',
 		// zIndex: '100'
-	},
-	progress: {
-		width: 'inherit',
-		backgroundColor: '#efefef',
-		margin: '0.5rem',
-		borderRadius: '0.5rem'
-	},
-	bar: {
-		width: '20%',
-		height: '0.6rem',
-		backgroundColor: '#4faf4e',
-		borderRadius: 'inherit'
 	}
+	// progress: {
+	// 	width: 'inherit',
+	// 	backgroundColor: '#efefef',
+	// 	margin: '0.5rem',
+	// 	borderRadius: '0.5rem'
+	// },
+	// bar: {
+	// 	width: '20%',
+	// 	height: '0.6rem',
+	// 	backgroundColor: '#4faf4e',
+	// 	borderRadius: 'inherit'
+	// }
 }));

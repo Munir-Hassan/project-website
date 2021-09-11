@@ -6,17 +6,18 @@ import useStyles from './styles';
 import InputField from '../InputComponent/InputField';
 import api from '../../APIs';
 
-const initialFundraiseForm = {
-	title: '',
-	description: '',
-	amount: '',
-	category: '',
-	imageFile: '',
-	user_id: ''
-};
 const categoryList = [ 'Education', 'Health', 'Orphanage', 'Mosque', 'Poor & Needy', 'Food' ];
 let imageBase64 = '';
 const FundraiseForm = ({ user }) => {
+	const initialFundraiseForm = {
+		title: '',
+		description: '',
+		amount: '',
+		category: '',
+		imageFile: '',
+		user_id: user && user._id,
+		user_name: user && `${user.firstname} ${user.lastname}`
+	};
 	const classes = useStyles();
 	const history = useHistory();
 	const [ fundraiseForm, setFundraiseForm ] = useState(initialFundraiseForm);
@@ -37,6 +38,7 @@ const FundraiseForm = ({ user }) => {
 		const image = e.target.files[0];
 		const reader = new FileReader();
 		console.log('uploadImageFile');
+		console.log('userID: ', user._id);
 
 		reader.onloadend = () => {
 			console.log(image);
@@ -52,7 +54,6 @@ const FundraiseForm = ({ user }) => {
 	const handleFundraiseFormSubmit = async (event) => {
 		event.preventDefault();
 		console.log(user._id);
-		setFundraiseForm({ ...fundraiseForm, user_id: user._id });
 		console.log(fundraiseForm);
 
 		try {
@@ -60,6 +61,7 @@ const FundraiseForm = ({ user }) => {
 				.post('/fundraise/create-fundraise', fundraiseForm)
 				.then((response) => {
 					console.log('fundraise post!');
+					setFundraiseForm(response.data);
 					history.push('/donate');
 				})
 				.catch((error) => {
@@ -135,7 +137,7 @@ const FundraiseForm = ({ user }) => {
 									variant='contained'
 									fullWidth
 								>
-									Create Fundraise
+									CreateFundraise
 								</Button>
 							</Grid>
 						</Grid>

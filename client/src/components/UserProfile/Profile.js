@@ -8,31 +8,73 @@ const Profile = () => {
 	return (
 		<Grow in>
 			<Container>
-				<div className={classes.profileContainer}>
-					<div className={classes.profileLeft}>
-						<h1>profile left</h1>
-						<Paper elevation={4} variant='elevation' className={classes.paperForm}>
-							<img
-								src={img}
-								alt='profile avatar'
-								style={{ width: '50%', height: '50%', borderRadius: '50%' }}
-							/>
-							<Typography>Profile Name</Typography>
-						</Paper>
-					</div>
-					<div className={classes.profileRight}>
-						<h1>profile right</h1>
-						<Paper
-							elevation={4}
-							variant='elevation'
-							className={[
-								classes.paperForm,
-								{ width: '100%', height: '100%', border: '1px solid black' }
-							]}
+				<div style={{ flexGrow: 1, marginTop: '4rem' }}>
+					<Grid container>
+						<Grid
+							style={{
+								display: 'flex',
+								flexDirection: 'column',
+								alignItems: 'center',
+								// justifyContent: 'center',
+								// border: '1px solid black',
+								// backgroundColor: '#4faf4e',
+								// backgroundColor: 'rgba(150, 211, 149, 0.8)',
+								borderTopLeftRadius: '1rem',
+								borderBottomLeftRadius: '1rem',
+								padding: 10,
+								paddingRight: 5
+							}}
+							item
+							xs={4}
 						>
-							<Typography>Profile Name</Typography>
-						</Paper>
-					</div>
+							<Paper
+								elevation={3}
+								style={{
+									backgroundColor: 'rgba(150, 211, 149, 0.8)',
+									borderRadius: '1rem',
+									width: '90%',
+									padding: '1rem',
+									margin: '2rem 0',
+									justifyContent: 'center',
+									alignItems: 'center'
+								}}
+							>
+								<Typography>left</Typography>
+							</Paper>
+						</Grid>
+						<Grid
+							style={{
+								display: 'flex',
+								flexDirection: 'column',
+								alignItems: 'center',
+								// justifyContent: 'center',
+								// border: '1px solid black',
+								// backgroundColor: '#4faf4e',
+								// backgroundColor: 'rgba(150, 211, 149, 0.8)',
+								borderTopRightRadius: '1rem',
+								borderBottomRightRadius: '1rem',
+								padding: 10,
+								paddingLeft: '0',
+								paddingRight: '0'
+							}}
+							item
+							xs={8}
+						>
+							<Paper
+								elevation={3}
+								style={{
+									borderRadius: '1rem',
+									width: '90%',
+									padding: '1rem',
+									margin: '2rem 0',
+									justifyContent: 'center',
+									alignItems: 'center'
+								}}
+							>
+								<Typography>Right</Typography>
+							</Paper>
+						</Grid>
+					</Grid>
 				</div>
 			</Container>
 		</Grow>

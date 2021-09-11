@@ -25,15 +25,26 @@ const fundraisePosts = mongoose.Schema({
 		required: true
 	},
 	user_id: {
-		type: String
+		type: String,
+		required: true
+	},
+	user_name: {
+		type: String,
+		required: true
+	},
+	status: {
+		type: String,
+		default: 'pending'
 	},
 	donated: [
 		{
 			amount: {
-				type: Number
+				type: Number,
+				require: true,
+				default: 0
 			},
 			user: {
-				id: {
+				userId: {
 					type: String
 				},
 				name: {
@@ -44,6 +55,9 @@ const fundraisePosts = mongoose.Schema({
 				}
 			},
 			transaction_id: {
+				type: String
+			},
+			receipt_url: {
 				type: String
 			}
 		}

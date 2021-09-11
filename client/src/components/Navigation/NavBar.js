@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { AppBar, Typography, Button } from '@material-ui/core';
+import { AppBar, Typography, Button, Avatar } from '@material-ui/core';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import useStyles from './styles';
@@ -58,10 +58,15 @@ const NavBar = ({ user, setUser }) => {
 				<div className={classes.profileContainer}>
 					{user ? (
 						<React.Fragment>
-							<Button
+							<Avatar
+								src={user.image}
 								onClick={handleUser}
-								variant='outlined'
-							>{`${user.firstname} ${user.lastname}`}</Button>
+								className={classes.profileAvater}
+								alt={user.firstname + user.lastname}
+							/>
+							<Button onClick={handleUser} variant='outlined'>
+								{`${user.firstname} ${user.lastname}`}
+							</Button>
 							<Button variant='outlined' color='secondary' onClick={handleLogOut}>
 								Sign Out
 							</Button>
