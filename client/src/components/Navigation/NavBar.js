@@ -35,7 +35,7 @@ const NavBar = ({ user, setUser }) => {
 			<AppBar className={classes.appBar} position='sticky' color='secondary'>
 				<div className={classes.brandContainer}>
 					<Typography className={classes.brandName} component={Link} to='/' variant='h2' align='center'>
-						Imam Foundation
+						Corona Charities
 					</Typography>
 				</div>
 				<div className={classes.menuContainer}>
